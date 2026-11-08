@@ -1,0 +1,119 @@
+import sys,time,os
+os.system("")
+COLORS = {
+    0:(255,255,255), #배경,꼬리
+    1:(0,0,0),  #윤곽선,눈썹,눈 검은자,볼 선
+    3:(247,191,200), # 볼, 귀 안쪽
+}
+RESET = '\033[0m'
+while True:
+    a=input("\033[38;2;254;230;158m우나?(Una?)")
+    print()
+    d=[]
+    for y in range(60):
+         d.append([])
+         for x in range(44):
+              if ((x==9 and y==33) or (x==8 and y==34) or (x==7 and y==35)
+                  or (x==10 and y==34) or (x==9 and y==35) or (x==11 and y==35)
+                  or (x==10 and y==36) or (x==32 and y==31) or (x==31 and y==32)
+                  or (x==30 and y==33) or (x==33 and y==32) or (x==32 and y==33)
+                  or (x==34 and y==33) or (x==33 and y==34)
+                  ):
+                   d[y].append(1)
+              elif ((x>=11 and x<=12 and y>=4 and y<=5) or (x>=12 and x<=13 and y>=6 and y<=7)
+                 or (x>=13 and x<=14 and y>=7 and y<=10) or (x==14 and y>=11 and y<=12)
+                 or (x==15 and y>=9 and y<=14) or (x==16 and y>=12 and y<=15)
+                 or (x==17 and y>=2 and y<=5) or (x==18 and y>=4 and y<=8)
+                 or (x==19 and y>=5 and y<=12) or (x==20 and y>=9 and y<=14)
+                 or (x>=7 and x<=11 and y>=32 and y<=37) or (x==6 and y>=33 and y<=37)
+                 or (x==5 and y==35) or (x==12 and y>=33 and y<=36)
+                 or (x==13 and y>=34 and y<=35) or (x>=32 and x<=33 and y==29)
+                 or (x>=30 and x<=35 and y>=30 and y<=34) or (x==29 and y>=32 and y<=33)
+                 or (x>=31 and x<=34 and y==35) or (x==36 and y>=31 and y<=33)
+                 ):
+                   d[y].append(3)
+              elif ((x==14 and y==29) or (x==16 and y==30) or (x==15 and y==31)
+                    or (x==26 and y==28) or (x>=26 and x<=27 and y==30)
+                    ):
+                   d[y].append(0)
+              elif ((x>=9 and x<=12 and y==1) or (x>=8 and x<=15 and y==2) or (x>=8 and x<=9 and y>=3 and y<=5)
+                    or (x>=12 and x<=15 and y==3) or (x>=13 and x<=15 and y>=4 and y<=5) or (x>=14 and x<=18 and y==1)
+                    or (x>=14 and x<=15 and y==6) or (x>=15 and x<=16 and y>=7 and y<=8) or (x>=16 and x<=17 and y>=9 and y<=11)
+                    or (x>=17 and x<=18 and y>=12 and y<=16) or (x==19 and y==16) or (x>=18 and x<=19 and y>=2 and y<=3)
+                    or (x>=19 and x<=20 and y>=3 and y<=4) or (x==20 and y>=5 and y<=8) or (x==21 and y>=6 and y<=15)
+                    or (x==22 and y>=9 and y<=15) or (x>=9 and x<=10 and y>=6 and y<=7) or (x==10 and y>=8 and y<=10)
+                    or (x==11 and y>=9 and y<=13) or (x==12 and y>=12 and y<=15) or (x==13 and y>=14 and y<=16)
+                    or (x>=10 and x<=14 and y==17) or (x>=7 and x<=11 and y==18) or (x>=6 and x<=8 and y==19)
+                    or(x>=5 and x<=7 and y==20) or (x>=4 and x<=5 and y>=21 and y<=22) or (x>=3 and x<=4 and y>=22 and y<=23)
+                    or (x>=2 and x<=3 and y>=24 and y<=25) or (x>=1 and x<=2 and y>=25 and y<=27) or (x>=0 and x<=1 and y>=28 and y<=35)
+                    or (x>=1 and x<=2 and y>=36 and y<=38) or (x>=2 and x<=3 and y>=38 and y<=39) or (x>=3 and x<=4 and y>=40 and y<=41)
+                    or (x>=4 and x<=5 and y>=41 and y<=42) or (x>=6 and x<=7 and y>=42 and y<=44) or (x>=5 and x<=6 and y>=44 and y<=48)
+                    or (x>=6 and x<=10 and y==49) or (x>=8 and x<=10 and y==47) or (x==9 and y==46) or (x>=10 and x<=11 and y==48)
+                    or (x==8 and y==50) or (x>=9 and x<=11 and y>=50 and y<=52) or (x==12 and y==51)
+                    or (x>=12 and x<=13 and y>=52 and y<=53) or (x>=13 and x<=14 and y>=53 and y<=54) or (x>=15 and x<=16 and y>=54 and y<=55)
+                    or (x>=17 and x<=18 and y==55) or (x==9 and y>=54 and y<=55) or (x==8 and y>=55 and y<=56)
+                    or (x>=10 and x<=11 and y>=57 and y<=58) or (x==10 and y==59) or (x==13 and y>=58 and y<=59)
+                    or (x>=15 and x<=16 and y==58) or (x==16 and y==57) or (x>=17 and x<=25 and y==56)
+                    or (x>=20 and x<=25 and y==57) or (x>=21 and x<=22 and y>=58 and y<=59) or (x>=24 and x<=28 and y==58)
+                    or (x>=23 and x<=27 and y==59) or (x>=28 and x<=29 and y>=55 and y<=57) or (x==27 and y==55)
+                    or (x==30 and y>=54 and y<=55) or (x>=31 and x<=32 and y==54) or (x>=32 and x<=33 and y==53)
+                    or (x>=33 and x<=34 and y>=51 and y<=52) or (x>=34 and x<=35 and y>=49 and y<=50) or (x>=35 and x<=36 and y>=45 and y<=48)
+                    or (x>=37 and x<=38 and y>=47 and y<=48) or (x>=38 and x<=39 and y>=43 and y<=47) or (x==37 and y>=40 and y<=41)
+                    or (x==38 and y==40) or (x>=38 and x<=39 and y>=36 and y<=39) or (x>=39 and x<=40 and y>=26 and y<=35)
+                    or (x>=38 and x<=39 and y>=24 and y<=27) or (x>=37 and x<=38 and y>=22 and y<=24) or (x>=36 and x<=37 and y>=21 and y<=22)
+                    or (x>=35 and x<=36 and y>=20 and y<=21) or (x>=34 and x<=35 and y>=19 and y<=20) or (x>=33 and x<=34 and y>=18 and y<=19)
+                    or (x>=31 and x<=32 and y>=17 and y<=18) or (x>=28 and x<=30 and y==17) or (x>=24 and x<=30 and y==16)
+                    or (x>=24 and x<=26 and y==15) or (x>=11 and x<=13 and y==21) or (x>=10 and x<=11 and y==22)
+                    or (x>=9 and x<=10 and y==23) or (x>=8 and x<=9 and y>=24 and y<=25) or (x>=7 and x<=8 and y>=26 and y<=28)
+                    or (x>=24 and x<=26 and y==19) or (x>=23 and x<=29 and y==20) or (x>=27 and x<=30 and y==21)
+                    or (x>=29 and x<=31 and y==22) or (x==30 and y==23) or (x>=31 and x<=32 and y>=23 and y<=24)
+                    or (x>=32 and x<=33 and y>=25 and y<=27) or (x>=14 and x<=16 and y>=28 and y<=32) or (x==13 and y>=29 and y<=32)
+                    or (x==12 and y==31) or (x==17 and y>=29 and y<=31) or (x>=26 and x<=27 and y==27)
+                    or (x>=25 and x<=28 and y>=28 and y<=31) or (x==24 and y==29) or (x>=21 and x<=22 and y>=33 and y<=35)
+                    or (x==19 and y>=34 and y<=35) or (x==20 and y>=35 and y<=36) or (x==23 and y>=35 and y<=37)
+                    or (x==22 and y==37) or (x==24 and y>=34 and y<=35) or (x==25 and y==34)
+                    ):
+                   d[y].append(1)
+              elif ((x>=0 and x<=43 and y>=0 and y<=1) or (x>=0 and x<=7 and y==2) or (x>=20 and x<=43 and y==2)
+                    or (x>=0 and x<=7 and y==3) or (x>=21 and x<=43 and y==3) or (x>=0 and x<=7 and y==4)
+                    or (x>=21 and x<=43 and y==4) or (x>=0 and x<=7 and y==5) or (x>=21 and x<=43 and y==5)
+                    or (x>=0 and x<=8 and y==6) or (x>=22 and x<=43 and y==6) or (x>=0 and x<=8 and y==7)
+                    or (x>=22 and x<=43 and y==7) or (x>=0 and x<=9 and y==8) or (x>=22 and x<=43 and y==8)
+                    or (x>=0 and x<=9 and y==9) or (x>=23 and x<=43 and y==9) or (x>=0 and x<=9 and y==10)
+                    or (x>=23 and x<=43 and y==10) or (x>=0 and x<=10 and y==11) or (x>=23 and x<=43 and y==11)
+                    or (x>=0 and x<=10 and y==12) or (x>=23 and x<=43 and y==12) or (x>=0 and x<=10 and y==13)
+                    or (x>=23 and x<=43 and y==13) or (x>=0 and x<=11 and y==14) or (x>=23 and x<=43 and y==14)
+                    or (x>=0 and x<=11 and y==15) or (x>=23 and x<=43 and y==15) or (x>=0 and x<=12 and y==16)
+                    or (x>=31 and x<=43 and y==16) or (x>=0 and x<=9 and y==17) or (x>=33 and x<=43 and y==17)
+                    or (x>=0 and x<=6 and y>=18 and y<=19) or (x>=35 and x<=43 and y>=18 and y<=19) or (x>=0 and x<=4 and y>=20 and y<=21)
+                    or (x>=37 and x<=43 and y>=20 and y<=21) or (x>=0 and x<=2 and y>=22 and y<=23) or (x>=39 and x<=43 and y>=22 and y<=23)
+                    or (x>=0 and x<=1 and y==24) or (x>=40 and x<=43 and y>=24 and y<=25) or (x==0 and y>=25 and y<=27)
+                    or (x>=41 and x<=43 and y>=26 and y<=27) or (x>=41 and x<=43 and y>=28 and y<=35) or (x>=40 and x<=43 and y>=36 and y<=59)
+                    or (x==0 and y>=36 and y<=59) or (x==1 and y>=39 and y<=59) or (x==2 and y>=40 and y<=59)
+                    or (x==3 and y>=42 and y<=59) or (x==4 and y>=43 and y<=59) or (x==5 and y==43)
+                    or (x>=5 and x<=10 and y>=49 and y<=59) or (x>=11 and x<=14 and y>=53 and y<=59) or (x>=15 and x<=16 and y>=54 and y<=59)
+                    or (x>=17 and x<=18 and y>=57 and y<=59) or (x==19 and y==57) or (x>=19 and x<=20 and y>=58 and y<=59)
+                    or (x>=35 and x<=43 and y>=48 and y<=59) or (x>=32 and x<=34 and y>=53 and y<=59) or (x>=30 and x<=31 and y>=54 and y<=59)
+                    or (x>=28 and x<=29 and y>=58 and y<=59) or (x==39 and y>=40 and y<=42) or (x==38 and y>=41 and y<=42)
+
+                    ):
+                   d[y].append(0)
+              else:
+                   d[y].append(2)
+    for row in d:
+            for c in row:
+                r,g,b=COLORS.get(c,(249,237,200))
+                sys.stdout.write(f'\033[48;2;{r};{g};{b}m  {RESET}')
+                sys.stdout.flush()
+                time.sleep(0.005)
+            sys.stdout.write("\n")
+    print()
+    b=input("\033[38;2;254;230;158m우나 야하?(Una Yaha?) y/n:")
+    print()
+    if b.lower()!="y":
+         if b.lower()=="n":
+                 print("\033[38;2;254;230;158m이야하아!!!")
+                 break
+         else:
+                  print("\033[38;2;254;230;158m우우나아?")
+                  print()
